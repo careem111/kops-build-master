@@ -24,7 +24,7 @@
             dir('charts') {
               withCredentials([usernamePassword(credentialsId: 'jfrog', usernameVariable: 'username', passwordVariable: 'password')]) {
               sh '/usr/local/bin/helm package webapp'
-              sh '/usr/local/bin/helm push-artifactory webapp-1.0.tgz https://kubekrm.jfrog.io/artifactory/api/helm/dpthelm-helm-local --username $username --password $password'
+              sh '/usr/local/bin/helm push-artifactory webapp-1.0.tgz https://kubekrm.jfrog.io/artifactory/dpthelm-helm-local/ --username $username --password $password'
                     }
              }
           }
